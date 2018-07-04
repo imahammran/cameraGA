@@ -101,47 +101,9 @@ public partial class index : System.Web.UI.Page
         }
         conn.Close();
 
-        #region
-        //conn.Open();
-        //cmd = new MySqlCommand("select * from flength", conn);
-        //reader = cmd.ExecuteReader();
-
-        //List<Flength> fl = new List<Flength>();
-
-        //while (reader.Read())
-        //{
-        //    string flengthID = reader.GetValue(0) + "";
-        //    string flengthDesc = reader.GetValue(1) + "";
-
-        //    Flength temp = new Flength(flengthID, flengthDesc);
-        //    fl.Add(temp);
-        //}
-        //conn.Close();
-
-        //conn.Open();
-        //cmd = new MySqlCommand("select * from fstop", conn);
-        //reader = cmd.ExecuteReader();
-
-        //List<Fstop> fs = new List<Fstop>();
-
-        //while (reader.Read())
-        //{
-        //    string fstopID = reader.GetValue(0) + "";
-        //    string fstopDesc = reader.GetValue(1) + "";
-
-        //    Fstop temp = new Fstop(fstopID, fstopDesc);
-        //    fs.Add(temp);
-        //}
-        //conn.Close();
-        #endregion
-
         //GENETIC ALGORITHM START
         //POPULATION GENERATION
-
-        //System.IO.StreamWriter file1 = new System.IO.StreamWriter(@"C:\Users\Imah\Desktop\fyp\WebsiteGA\tryGA1.txt");
-        //System.IO.StreamWriter file2 = new System.IO.StreamWriter(@"C:\Users\Imah\Desktop\fyp\WebsiteGA\tryGA2.txt");
-        //System.IO.StreamWriter file3 = new System.IO.StreamWriter(@"C:\Users\Imah\Desktop\fyp\WebsiteGA\tryGA3.txt");
-
+        
         int population = 100; //bilangan gabungan lens + body
         int generation = 100; //bilangan loop yg generate population
 
@@ -191,20 +153,8 @@ public partial class index : System.Web.UI.Page
             //SELECTION
             Array.Sort(chrome, delegate(Chromosome x, Chromosome y) { return y.fitness.CompareTo(x.fitness); });
 
-            //try display all generation and its fitnesses
-            //string lines = "Generation " + g + ": " + "fitness:" + chrome[0].fitness;
-            //file1.WriteLine(lines);
-            //string lines2 = "Generation " + g + ": " + "fitness:" + chrome[1].fitness;
-            //file2.WriteLine(lines2);
-            //string lines3 = "Generation " + g + ": " + "fitness:" + chrome[2].fitness;
-            //file3.WriteLine(lines3);
-
         }
-        //file1.Close();
-        //file2.Close();
-        //file3.Close();
-
-
+        
         //to send data to next page
         //display body result
         List<string> bodyNameL = new List<string>();
@@ -594,30 +544,3 @@ public class Style
         this.fstop = fstop;
     }
 }
-
-#region
-//public class Flength
-//{
-//    public string id;
-//    public string desc;
-
-//    public Flength(string id, string desc)
-//    {
-//        this.id = id;
-//        this.desc = desc;
-//    }
-
-//}
-
-//public class Fstop
-//{
-//    public string id;
-//    public string desc;
-
-//    public Fstop(string id, string desc)
-//    {
-//        this.id = id;
-//        this.desc = desc;
-//    }
-//}
-#endregion
